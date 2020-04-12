@@ -5,17 +5,17 @@ apply plugin: 'com.android.library'
 // for Android libraries publish to Jitpack.io
 apply plugin: 'com.github.dcendents.android-maven'
 
-//Public Android Lib to jcenter confit
+//Public Android Lib to jcenter config
 apply plugin: 'com.novoda.bintray-release'
 //上传配置
 publish {
     userOrg = 'keithll' // bintray用户名
-    repoName = 'https://dl.bintray.com/keithll/ComLibrary' // bintray仓库名
+    repoName = 'ComLibrary' // bintray仓库名
     groupId = 'com.keith.android' // 决定最后依赖的路径
-    artifactId = 'comlibrary' // 决定最后依赖的名称
+    artifactId = 'commonUtils' // 决定最后依赖的名称
     publishVersion = '1.0.0' // 决定最后依赖的版本号
-    desc = '测试jcenter上传' // 描述
-    website = '' // 项目网站，可以用 Github 地址
+    desc = '项目常用的工具类' // 描述
+    website = 'https://github.com/KeithLl/ComLibrary' // 项目网站，可以用 Github 地址
     dryRun = false // true-仅运行  false-运行+上传
 }
 
