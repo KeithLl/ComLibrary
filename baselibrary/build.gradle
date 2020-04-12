@@ -42,8 +42,19 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     lintOptions {
         abortOnError false
+        checkReleaseBuilds false
+    }
+
+    //设置不生成BuildConfig文件
+    libraryVariants.all {
+        it.generateBuildConfig.enabled = false
     }
 }
 
@@ -51,9 +62,4 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
-}
-
-//设置不生成BuildConfig文件
-android.libraryVariants.all {
-    it.generateBuildConfig.enabled = false
 }
