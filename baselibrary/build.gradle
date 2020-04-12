@@ -10,7 +10,7 @@ apply plugin: 'com.novoda.bintray-release'
 //上传配置
 publish {
     userOrg = 'keithll' // bintray用户名
-    repoName = 'ComLibrary' // bintray仓库名
+    repoName = 'common' // bintray仓库名
     groupId = 'com.keith.android' // 决定最后依赖的路径
     artifactId = 'commonUtils' // 决定最后依赖的名称
     publishVersion = '1.0.0' // 决定最后依赖的版本号
@@ -53,6 +53,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
 }
 
+//设置不生成BuildConfig文件
 android.libraryVariants.all {
     it.generateBuildConfig.enabled = false
 }
