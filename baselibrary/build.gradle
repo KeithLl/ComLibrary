@@ -2,8 +2,11 @@ apply plugin: 'com.android.library'
 // for Java libraries
 //apply plugin: 'maven'
 
-// for Android libraries
+// for Android libraries publish to Jitpack.io
 apply plugin: 'com.github.dcendents.android-maven'
+
+//Add group name
+group = 'com.github.KeithLl'
 
 android {
     compileSdkVersion 29
@@ -15,7 +18,6 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
     }
 
