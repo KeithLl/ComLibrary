@@ -7,17 +7,6 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 //Public Android Lib to jcenter config
 apply plugin: 'com.novoda.bintray-release'
-//上传配置
-publish {
-    userOrg = 'keithll' // bintray用户名
-    repoName = 'common' // bintray仓库名
-    groupId = 'com.keith.android' // 决定最后依赖的路径
-    artifactId = 'commonUtils' // 决定最后依赖的名称
-    publishVersion = '1.0.0' // 决定最后依赖的版本号
-    desc = '项目常用的工具类' // 描述
-    website = 'https://github.com/KeithLl/ComLibrary' // 项目网站，可以用 Github 地址
-    dryRun = false // true-仅运行  false-运行+上传
-}
 
 //Add group name
 group = 'com.github.KeithLl'
@@ -48,7 +37,7 @@ android {
     }
 
     lintOptions {
-        abortOnError false
+        abortOnError false//lint错误不停止构建
         checkReleaseBuilds false
     }
 
@@ -62,4 +51,28 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
+}
+
+//获取bintray属性
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+String localBintrayUser = properties.getProperty("bintray.user")
+String localBintrayApikey = properties.getProperty("bintray.apikey")
+//jcenter上传配置
+publish {
+    bintrayUser = localBintrayUser   //bintray.com用户名
+    bintrayKey = localBintrayApikey  //bintray.com apikey
+    // 未上传到jcenter时需要在项目根buildgradle的allprojects->repositories下添加对应的依赖路径
+    // maven { url 'https://dl.bintray.com/userOrg/repoName' }
+    userOrg = 'keithll' // bintray用户名
+    repoName = 'common' // bintray仓库名,在bintray网站配置的
+    //在app工程下依赖的配置implementation 'com.keith.android:commonUtils:1.0.1'
+    groupId = 'com.keith.android' // 决定最后依赖的路径
+    artifactId = 'commonUtils' // jcenter上的项目名称
+    publishVersion = '1.0.2' // 决定最后依赖的版本号
+    //项目其他配置信息
+    desc = '项目常用的工具类' // 描述
+    website = 'https://github.com/KeithLl/ComLibrary' // 项目网站，可以用 Github 地址
+    dryRun = false // true-仅运行  false-运行+上传
 }
