@@ -1,4 +1,4 @@
-package com.keith.baselibrary.utils;
+package com.keith.common.utils;
 
 /**
  * Created by KeithLee on 17/01/06.

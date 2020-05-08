@@ -66,13 +66,13 @@ publish {
     // 未上传到jcenter时需要在项目根buildgradle的allprojects->repositories下添加对应的依赖路径
     // maven { url 'https://dl.bintray.com/userOrg/repoName' }
     userOrg = 'keithll' // bintray用户名
-    repoName = 'common' // bintray仓库名,在bintray网站配置的
+    repoName = 'common' // bintray仓库名,在bintray网站配置的,默认是maven
     //在app工程下依赖的配置implementation 'com.keith.android:commonUtils:1.0.1'
     groupId = 'com.keith.android' // 决定最后依赖的路径
     artifactId = 'commonUtils' // jcenter上的项目名称
-    publishVersion = '1.0.2' // 决定最后依赖的版本号
+    publishVersion = '1.0.3' // 决定最后依赖的版本号
     //项目其他配置信息
     desc = '项目常用的工具类' // 描述
     website = 'https://github.com/KeithLl/ComLibrary' // 项目网站，可以用 Github 地址
-    dryRun = false // true-仅运行  false-运行+上传
+    dryRun = true // true-仅运行  false-运行+上传
 }

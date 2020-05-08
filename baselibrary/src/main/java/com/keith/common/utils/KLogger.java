@@ -6,7 +6,7 @@ import android.util.Log;
  * Created by KeithLee on 2020/4/30.
  * Introduction:全局打印的工具类
  */
-public class Logger {
+public class KLogger {
     private static boolean sELog;
     private static boolean sDLog;
     private static boolean sILog;

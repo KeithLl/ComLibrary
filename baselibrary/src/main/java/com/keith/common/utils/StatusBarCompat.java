@@ -1,4 +1,4 @@
-package com.keith.baselibrary.utils;
+package com.keith.common.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
