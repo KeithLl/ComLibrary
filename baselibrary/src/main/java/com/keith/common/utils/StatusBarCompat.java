@@ -214,7 +214,6 @@ public class StatusBarCompat {
      *
      * @param color
      * @return 是否为亮色
-     * @from https://stackoverflow.com/questions/24260853/check-if-color-is-dark-or-light-in-android
      */
     private static boolean isLightColor(@ColorInt int color) {
         return ColorUtils.calculateLuminance(color) >= 0.5;
