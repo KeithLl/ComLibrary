@@ -18,14 +18,16 @@ public class KContextProvider {
     }
 
     public static KContextProvider get() {
-        if (sInstance == null) {
+         KContextProvider temp = sInstance;
+        if (temp == null) {
             synchronized (KContextProvider.class) {
-                if (sInstance == null) {
+                if (temp == null) {
                     Context context = ApplicationContentProvider.mContext;
                     if (context == null) {
                         throw new IllegalArgumentException("context is null");
                     }
-                    sInstance = new KContextProvider(context);
+                    temp = new KContextProvider(context);
+                    sInstance = temp;
                 }
             }
         }

@@ -70,7 +70,7 @@ publish {
     //在app工程下依赖的配置implementation 'com.keith.android:commonUtils:1.0.1'
     groupId = 'com.keith.android' // 决定最后依赖的路径
     artifactId = 'commonUtils' // jcenter上的项目名称
-    publishVersion = '1.0.5' // 决定最后依赖的版本号
+    publishVersion = '1.0.6' // 决定最后依赖的版本号
     //项目其他配置信息
     desc = '项目常用的工具类' // 描述
     website = 'https://github.com/KeithLl/ComLibrary' // 项目网站，可以用 Github 地址
