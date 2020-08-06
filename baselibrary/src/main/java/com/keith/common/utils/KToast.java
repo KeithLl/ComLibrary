@@ -48,7 +48,7 @@ public class KToast {
         SUCCESS, FAILED, WARNING
     }
 
-    public static class Builder {
+    private static class Builder {
 
         private Gravity mGravity;
         private Status mStatus;
